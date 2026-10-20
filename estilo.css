@@ -1,0 +1,25 @@
+h1{
+    color: green;
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: ;
+}
+
+p{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em 20px;
+    line-height: 2;
+    font-weight: 200;
+}
+
+h1.principal{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#indice1{
+    color: cyan;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

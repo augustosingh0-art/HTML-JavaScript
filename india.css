@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600&display=swap');
+
+:root {
+  --cream: #FFF7EC;
+  --ink: #3A1F16;
+  --saffron: #FF9933;
+  --green: #0F7B3E;
+  --indigo: #1B2A6B;
+  --marigold: #E8A33D;
+  --rule: rgba(58, 31, 22, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 48px 24px 80px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Mukta', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 700px
+
+}
+
+/* franja tricolor fija arriba, evoca la bandera sin ser literal */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    var(--saffron) 0%, var(--saffron) 33%,
+    var(--cream) 33%, var(--cream) 67%,
+    var(--green) 67%, var(--green) 100%
+  );
+  z-index: 10;
+}
+
+h1 {
+  font-family: 'Rozha One', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--indigo);
+  text-align: center;
+  margin: 16px 0 8px;
+  letter-spacing: 0.5px;
+}
+
+h1 u {
+  text-decoration: none;
+}
+
+/* reemplaza el subrayado por defecto por una regla ornamental */
+h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: linear-gradient(to right, var(--saffron), var(--green));
+  border-radius: 2px;
+}
+
+h3 {
+  font-family: 'Rozha One', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--green);
+  margin-top: 46px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h3 u {
+  text-decoration: none;
+}
+
+h3::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: var(--saffron);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+p {
+  margin: 0 0 18px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto 28px;
+  border-radius: 4px;
+  border: 5px solid var(--cream);
+  box-shadow:
+    0 0 0 2px var(--saffron),
+    0 0 0 4px var(--cream),
+    0 0 0 6px var(--green),
+    0 6px 18px rgba(58, 31, 22, 0.25);
+}
+
+/* la bandera y el icono de la página no llevan el marco decorativo */
+img[alt=""]:first-of-type {
+  box-shadow: 0 6px 18px rgba(58, 31, 22, 0.2);
+  border-color: var(--indigo);
+}
+
+br {
+  content: "";
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  body {
+    padding: 32px 16px 60px;
+  }
+}

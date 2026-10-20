@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title> Mi primera paguina </title>
+    <meta charset="utf-8">
+    <meta name ="author" content="Augusto">
+    <meta name ="copyright" content="Mi empresa srl">
+      <link rel="icon" href="https://img.freepik.com/vector-premium/icono-computadora_1076610-17418.jpg">
+    <link rel="stylesheet" href="estilo.css">
+    </head>
+<body>
+    <p>
+        <h1 class="principal">APRENDIENDO HTML</h1>
+    <h2 id="indice1">Indice</h2>
+    <ul>
+        <li><a href="#Texto">Etiquetas de texto</li>
+        <li><a href="#Listas">Crear listas</li>
+        <li><a href="#Multi">Multimedia</li>
+        <li><a href="#Tablas">Tablas</li>
+    </ul>
+    <p>Las etiquietas van desde el h1 hasta el h6,el tamaño es mayor en el uno y menor en el 6</p>
+    <p>BR da un salto de parrafo</p>
+    <h1 id ="Texto"> ETIQUETAS DE TEXTO</h1>
+    <p> Parrafo = p</p>
+    <b> Negritas = b</b>
+    <br>
+    <i>  Cursiva = i</i>
+    <br>
+    <u>U = texto subrayado</u>
+    <br>
+    <strike>Tacha el texto = strike</strike>
+    <small>Texto con disminucion de tamaño = small</small>
+    <br>
+    <a href="https://www.facebook.com/" target="_blank">Hacer click para ir a facebook</a>
+    <p>Redirigir a rutas externas o locales = a</p>
+    <br>
+    <h3 id = "Listas">LISTAS</h3>
+    <p>Hay dos tipos de listas,ordenadas y desordenadas</p>
+    <h4>LISTAS ORDENADAS</h4>
+    <p>ol = order listl,los elementos agregados a la lista se utiliza la etiqueta li</p>
+    <h5>Lista de utiles escolares: </h5>
+    <ol>
+        <li>Cartuchera</li>
+        <li>Lapicera</li>
+        <li>Borrador</li>
+        <li>Regla</li>
+    </ol>
+    <h4>LISTAS DESORDENADAS</h4>
+    <p>ul = unorder list,los elemenos agregados a la lista de utiliza la etiqueta li</p>
+    <h5>Lista de materias</h5>
+    <ul>
+        <li>Matemática</li>
+        <li>Lengua</li>
+        <li>Computación</li>
+        <li>Programación</li>
+    </ul>
+    <h3 id = "Multi">MULTIMEDIA</h3>
+    <P>Para insertar una imagen se usa la etiqueta img y su atributo src</P>
+    <h5>Imagen de una computadora</h5>
+    <img src="https://st3.depositphotos.com/1000128/13679/i/1600/depositphotos_136793208-stock-photo-desktop-computer-pc.jpg" alt="Computadora" width="100px">
+    <p>Para insertar un video local utilizamos la etiqueta video</p>
+    <h3>DIV</h3>
+    <p>Nos sirve para separar y agrupar contenidos</p>
+    <div>
+        <h1>Datos de colegios</h1>
+        <p>Sede en Calle Alberdi y Buenos Aires</p>
+        <p>2026</p>
+    </div>
+    <h3 id = "Tablas">TABLAS</h3>
+    <p>Estructurar datos en filas y columnas. Se utiliza la etiqueta <b>table</b> para crear una tabla</p>
+    <p>Con la etiqueta <b>tr</b> se definen las filas que van hacia la derecha</p>
+    <p>Con la etiqueta <b>td</b> se definen los campos por filas</p>
+    <table border="1px">
+        <tr>
+            <td>NRO de lista</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Edad</td>
+        </tr>
+        <tr border="1px">
+            <td>1</td>
+            <td>Augusto</td>
+            <td>Singh</td>
+            <td>16 años</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nahuel</td>
+            <td>Aramayo</td>
+            <td>30 años</td>
+        </tr>
+    </table>
+    <h3>El atributo id nos permite direccionar a algun punto de nuestra páguina. se utiliza el atributo href="#" para redireccionar dentro de la paguina</h3>
+    <h3>ICONO</h3>
+    <p>Se utiliza la etiqueta <b>LINK</b> dentro del head con el atributo <b>rel="icon"</b></p>
+    <p>Utilizaremops el href para insertar la ruta del archivo. Es imporante recordar que el icono debe tener .ico</p>
+    <h3>Atributo colspan y rowspan en tablas</h3>
+    <p>Colspan: sirve para unir columnas de una misma tabla</p>
+    <p>Rowspan: sirve para unir filas de una misma tabla</p>
+    <p>ejemplo</p>
+    <table border = "2px">
+        <tr>
+            <td colspan="2"> Nombre y apellido </td>
+        </tr>
+        <td>Nahuel</td>
+        <td>Aramayo</td>
+    </table>
+
+        <table border = "2px">
+        <tr>
+            <td rowspan="2"> Nombre y apellido </td>
+            <td>Nahuel</td>
+        </tr>
+        <td>Aramayo</td>
+    </table>
+</body>
+
+</html>
+
+<!-- verde = inicio y fin -->
+<!-- html = estructura , css = diseño , javascript = funcionamiento-->
+<!--el orden es head , body y footer al ultimo-->
+<!--P = parrafo, esa va dentro del cuerpo , las etiquetas h son etiquetas de titulo, van de 1 al 6-->
+<!--meta , es para caracteres especiales como la ñ-->
+<!--target y blank -->
+<!--Lorem es un texto para rellenar como ejemplo-->
+<!--Los atributos tienen un valor como en href ,el lin es el valor del atributo, la a es la etiqueta->

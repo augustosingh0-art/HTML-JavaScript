@@ -1,0 +1,157 @@
+/* ==========================================================
+   TP1 - Los 20 países con más población
+   Mismo estilo que el TP2: papel cuadriculado de cuaderno,
+   bordes gruesos y sombra dura. Acá el color aporta información:
+   los 3 primeros puestos van resaltados en amarillo.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&display=swap");
+
+/* ---------- Colores reutilizables ---------- */
+:root {
+    --tinta: #1b2540;
+    --papel: #f2f6fb;
+    --cuadricula: #d3deec;
+    --celda: #ffffff;
+    --celda-alterna: #e8f0fc;
+    --resaltador: #ffe066;
+}
+
+/* ---------- Página ---------- */
+body {
+    margin: 0;
+    padding: 2.5rem 1.5rem 4rem;
+    font-family: "Lexend", "Segoe UI", Arial, sans-serif;
+    color: var(--tinta);
+    background-color: var(--papel);
+    /* Papel cuadriculado hecho solo con CSS */
+    background-image:
+        linear-gradient(var(--cuadricula) 1px, transparent 1px),
+        linear-gradient(90deg, var(--cuadricula) 1px, transparent 1px);
+    background-size: 28px 28px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 0.4rem;
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* Segundo título (el de los 20 países) un poco más chico */
+h2 + br + h1 {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-weight: 600;
+}
+
+h2 {
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding: 0.15rem 0.8rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    background: var(--resaltador);
+    transform: rotate(-1deg);
+}
+
+/* Los <br> del HTML dejan un espacio fijo entre título y tabla */
+br {
+    display: block;
+    content: "";
+    margin-bottom: 0.8rem;
+}
+
+/* ---------- Tabla ---------- */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: var(--celda);
+    border: 3px solid var(--tinta);
+    /* Sombra dura, como una pegatina sobre el cuaderno */
+    box-shadow: 7px 7px 0 var(--tinta);
+}
+
+th,
+td {
+    padding: 0.5rem 1.4rem;
+    border: 2px solid var(--tinta);
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Fila de títulos */
+th {
+    background: var(--tinta);
+    color: var(--celda);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Filas alternadas para leer mejor */
+tr:nth-child(even) td {
+    background: var(--celda-alterna);
+}
+
+tr:nth-child(odd) td {
+    background: var(--celda);
+}
+
+/* Los 3 países con más población: celda del número resaltada */
+tr:nth-child(2) td:first-child,
+tr:nth-child(3) td:first-child,
+tr:nth-child(4) td:first-child {
+    background: var(--resaltador);
+    font-weight: 800;
+}
+
+/* Al pasar el mouse se resalta toda la fila */
+tr:hover td {
+    background: #fff3b0;
+}
+
+/* ---------- Contenido de las celdas ---------- */
+/* Banderas: mismo ancho, altura proporcional, con marco */
+td img {
+    display: block;
+    width: 90px;
+    height: auto;
+    margin: 0 auto;
+    border: 2px solid var(--tinta);
+}
+
+/* Nombre del país: subrayado con marcador */
+u {
+    text-decoration-line: underline;
+    text-decoration-color: var(--resaltador);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+/* Población: números alineados a la derecha, todos del mismo ancho */
+td:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+td:last-child b {
+    font-weight: 600;
+}
+
+/* ---------- Pantallas chicas ---------- */
+@media (max-width: 520px) {
+    body {
+        padding: 1.5rem 0.5rem 3rem;
+    }
+
+    th,
+    td {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    td img {
+        width: 60px;
+    }
+}

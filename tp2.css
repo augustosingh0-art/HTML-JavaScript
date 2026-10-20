@@ -1,0 +1,126 @@
+/* ==========================================================
+   TP2 - Tablas en HTML
+   Idea: papel cuadriculado de cuaderno + celdas de colores.
+   Las celdas combinadas (colspan / rowspan) se pintan de
+   otro color, así se ve a simple vista qué celdas se unieron.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&display=swap");
+
+/* ---------- Colores y medidas reutilizables ---------- */
+:root {
+    --tinta: #1b2540;
+    --papel: #f2f6fb;
+    --cuadricula: #d3deec;
+    --celda: #ffffff;
+    --resaltador: #ffe066;
+
+    /* Colores por defecto de las celdas combinadas */
+    --horizontal: #bcd0ff;   /* colspan */
+    --vertical: #ffc9d4;     /* rowspan */
+    --ambas: #c9f0d8;        /* colspan + rowspan */
+}
+
+/* Cada tabla tiene su propia paleta */
+table:nth-of-type(2) {
+    --horizontal: #ffe7a3;
+    --vertical: #d9c7ff;
+    --ambas: #ffc9d4;
+}
+
+table:nth-of-type(3) {
+    --horizontal: #b8ece6;
+    --vertical: #ffd3b0;
+    --ambas: #d9c7ff;
+}
+
+/* ---------- Página ---------- */
+body {
+    margin: 0;
+    padding: 2.5rem 1.5rem 4rem;
+    font-family: "Lexend", "Segoe UI", Arial, sans-serif;
+    color: var(--tinta);
+    background-color: var(--papel);
+    /* Papel cuadriculado hecho solo con CSS */
+    background-image:
+        linear-gradient(var(--cuadricula) 1px, transparent 1px),
+        linear-gradient(90deg, var(--cuadricula) 1px, transparent 1px);
+    background-size: 28px 28px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 0.4rem;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    display: inline-block;
+    margin: 0 0 2.5rem;
+    padding: 0.15rem 0.8rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    background: var(--resaltador);
+    transform: rotate(-1deg);
+}
+
+/* ---------- Tablas ---------- */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: var(--celda);
+    border: 3px solid var(--tinta);
+    /* Sombra dura, como una pegatina sobre el cuaderno */
+    box-shadow: 7px 7px 0 var(--tinta);
+}
+
+td {
+    min-width: 3rem;
+    height: 2.8rem;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--tinta);
+    background: var(--celda);
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    transition: background-color 0.15s ease;
+}
+
+/* Celdas combinadas: el color muestra qué tipo de unión tienen */
+td[colspan] {
+    background: var(--horizontal);
+}
+
+td[rowspan] {
+    background: var(--vertical);
+}
+
+td[colspan][rowspan] {
+    background: var(--ambas);
+}
+
+/* Al pasar el mouse por una celda se resalta */
+td:hover {
+    background: var(--resaltador);
+}
+
+/* El <br> entre tablas deja un espacio extra: lo compensamos */
+br {
+    display: block;
+    content: "";
+    margin-bottom: 1.6rem;
+}
+
+/* ---------- Pantallas chicas ---------- */
+@media (max-width: 520px) {
+    body {
+        padding: 1.5rem 0.75rem 3rem;
+    }
+
+    td {
+        min-width: 2rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
